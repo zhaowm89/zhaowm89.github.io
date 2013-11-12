@@ -1,9 +1,12 @@
-<html>
-	<head>
-		<title>学习GithubPages</title>
-	</head>
-	<body>
-		<h1>HelloWorld</h1>
-		<span>This is first page</span>
-	</body>
-</html>
+---
+layout: default
+title: Github Pages
+---
+
+<h2>{{ page.title }} </h2>
+<p>最新文章</p>
+<ul>
+	{% for post in site.posts %}
+	<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
